@@ -7,7 +7,6 @@ class ArticleListView(ListView):
     model = Article
     template_name = 'article_list.html'
 
-
 class Article1ListView(ListView):
     model = Article1
     template_name = 'article1_list.html'
