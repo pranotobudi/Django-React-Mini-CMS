@@ -1,0 +1,7 @@
+<h1>All books</h1>
+{% for article in object_list %}
+  <ul>
+    <li>Title: {{ article.title }}</li>
+    <li>Subtitle: {{ article.content }}</li>
+  </ul>
+{% endfor %}
