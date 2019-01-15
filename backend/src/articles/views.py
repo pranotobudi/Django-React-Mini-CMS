@@ -20,9 +20,10 @@ class Article3ListView(ListView):
     model = Article3
     template_name = 'article3_list.html'
 
-from django.views.generic import ListView
 class Article4ListView(ListView):
     model = Article4 
     template_name = 'article4_list.html'
 
-from django.views.generic import ListView
+class Article5ListView(ListView):
+    model = Article4 
+    template_name = 'article5_list.html'
