@@ -1,21 +1,49 @@
-from rest_framework.generics import ListAPIView, RetrieveAPIView
-from .serializer import ArticleSerializer, Article1Serializer, Article2Serializer
+from rest_framework import viewsets
+from rest_framework.generics import (
+    ListAPIView, 
+    RetrieveAPIView, 
+    CreateAPIView,
+    UpdateAPIView,
+    DestroyAPIView,
+) 
+
+from .serializer import ArticleSerializer
 from articles.models import Article 
-class ArticleListView(ListAPIView):
-    queryset = Article.objects.all()
+
+
+class ArticleViewSet(viewsets.ModelViewSet):
+    """
+    A viewset for viewing and editing user instances.
+    """
     serializer_class = ArticleSerializer
-
-
-class ArticleDetailView(RetrieveAPIView):
     queryset = Article.objects.all()
-    serializer_class = ArticleSerializer
 
-from rest_framework.generics import ListAPIView
-class Article1ListView(ListAPIView):
-    queryset = Article.objects.all()
-    serializer_class = Article1Serializer 
 
-from rest_framework.generics import ListAPIView
-class Article2ListView(ListAPIView):
-    queryset = Article.objects.all()
-    serializer_class = Article2Serializer
+# class ArticleListView(ListAPIView):
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer
+
+
+# class ArticleDetailView(RetrieveAPIView):
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer
+
+# class ArticleCreateView(CreateAPIView):
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer
+
+# class ArticleUpdateView(UpdateAPIView):
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer
+
+# class ArticleDeleteView(DestroyAPIView):
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer
+
+# class Article1ListView(ListAPIView):
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer 
+
+# class Article2ListView(ListAPIView):
+#     queryset = Article.objects.all()
+#     serializer_class = ArticleSerializer
